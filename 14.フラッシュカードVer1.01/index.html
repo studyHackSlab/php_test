@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>フラッシュカード</title>
+    <script>
+        var spanSec = 0;
+        var time;
+        var speed = 1000;
+        var type = "a";
+        var characters = "basic";
+        var startButton;
+        var stopButton;
+        var resetButton;
+        var intervalId;
+        var a = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん".split("");
+        var b = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン".split("");
+        var c = "がぎぐげござじずぜぞだぢづでどばびぶべぼぱぴぷぺぽ";
+        var d = "ガギグゲゴザジズゼゾダヂヅデドバビブベボパピプペポ";
+
+
+        window.onload = function () {
+
+            time = document.getElementById('time');
+
+            time.innerHTML = a[Math.floor(Math.random() * a.length)];
+
+            // time.innerHTML = b[Math.floor(Math.random() * b.length)];
+            // time.innerHTML = c[Math.floor(Math.random() * c.length)];
+            startButton = document.getElementById('start');
+            stopButton = document.getElementById('stop');
+            resetButton = document.getElementById('reset');
+
+            startButton.onclick = function () {
+
+                //文字のタイプを取得
+                let typeRadio = document.getElementsByName('type');
+                // console.log(typeRadio);
+                let len = typeRadio.length;
+                // typeRadio[0].checked = true;
+                typeRadio[0].checked = "";
+
+                //文字の種類を初期化
+                type = "a";
+                a = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん".split("");
+
+                for (let i = 0; i < len; i++) {
+                    if (typeRadio.item(i).checked) {
+                        // checkValue = typeRadio.item(i).value;
+                        type = typeRadio.item(i).value;
+                        console.log("ccc" + type);
+                    }
+                }
+
+                switch (type) {
+                    case 'b':
+                        a = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン".split("");
+                        break;
+                    case 'c':
+                        a = "がぎぐげござじずぜぞだぢづでどばびぶべぼぱぴぷぺぽ";
+                        break;
+                    case 'd':
+                        a = "ガギグゲゴザジズゼゾダヂヅデドバビブベボパピプペポ";
+                        break;
+                    default:
+                        a = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん".split("");
+                }
+                // if (type == "b") {
+                //     a = "アイウエオカキクケコサシスセソタチツテト".split("");
+                // }
+
+                time.innerHTML = a[Math.floor(Math.random() * a.length)];
+
+                //速さを取得
+                speed = 1000;
+                let speedRadio = document.getElementsByName('speed');
+                // let len = speedRadio.length;
+                len = speedRadio.length;
+                // speedRadio[0].checked = true;
+                speedRadio[0].checked = "";
+
+                // let checkValue = speed;
+                for (let i = 0; i < len; i++) {
+                    if (speedRadio.item(i).checked) {
+                        // checkValue = speedRadio.item(i).value;
+                        speed = speedRadio.item(i).value;
+                    }
+                }
+
+                // console.log(checkValue);
+                // console.log(len);
+                console.log("speed:" + speed + "type:" + type);
+                stop();
+                spanSec = 0;
+                start();
+
+            };
+
+            stopButton.onclick = function () {
+                stop();
+            };
+
+            // resetButton.onclick = function(){
+            //     reset();
+            // };
+        };
+
+        function start() {
+
+            if (intervalId == null) {
+                intervalId = setInterval(function () {
+                    spanSec++;
+                    // time.innerHTML = spanSec;
+                    time.innerHTML = a[Math.floor(Math.random() * a.length)];
+                    sec.innerHTML = spanSec;
+                    // time.innerHTML = b[Math.floor(Math.random() * b.length)];
+                    // time.innerHTML = c[Math.floor(Math.random() * c.length)];
+                }, Number(speed));
+                console.log(speed);
+            }
+            console.log(speed);
+            console.log(type);
+        }
+
+        function stop() {
+            clearInterval(intervalId);
+            intervalId = null;
+        }
+
+        function reset() {
+            spanSec = 0;
+            time.innerHTML = spanSec;
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1 id="time"></h1>
+    <h2 id="sec"></h2>
+    <!-- <label for="">Characters:<input type="radio" name="characters" value="basic">Basic</label>
+    <label for=""><input type="radio" name="characters" value="vs">voiced sound</label>
+    <br> -->
+    <label for="">Type:<br><input type="radio" name="type" value="a">ひらがな</label>
+    <label for=""><input type="radio" name="type" value="b">カタカナ</label>
+    <br>
+    <label for=""><input type="radio" name="type" value="c">ひらがな(voiced sound)</label>
+    <label for=""><input type="radio" name="type" value="d">カタカナ(voiced sound)</label>
+
+    <br><br>
+    <label for="">Speed:<input type="radio" name="speed" value="1000">1.0s</label>
+    <label for=""><input type="radio" name="speed" value="900">0.9s</label>
+    <label for=""><input type="radio" name="speed" value="850">0.85s</label>
+    <label for=""><input type="radio" name="speed" value="800">0.8s</label>
+    <label for=""><input type="radio" name="speed" value="750">0.75s</label>
+    <label for=""><input type="radio" name="speed" value="700">0.7s</label>
+    <label for=""><input type="radio" name="speed" value="500">0.5s</label>
+    <label for=""><input type="radio" name="speed" value="300">0.3s</label>
+    <br>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+    <!-- <button id="reset">RESET</button> -->
+</body>
+
+</html>
