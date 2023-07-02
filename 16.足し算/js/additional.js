@@ -1,6 +1,6 @@
 var spanSec = 0;
 var time;
-var speed = 1000;
+var speed = 1500;
 var characters = "basic";
 var startButton;
 var stopButton;
@@ -30,7 +30,7 @@ window.onload = function () {
     startButton.onclick = function () {
 
         //速さを取得
-        speed = 1000;
+        speed = 1500;
 
         let speedRadio = document.getElementsByName('speed');
         // let len = speedRadio.length;
