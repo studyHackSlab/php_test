@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>足し算</title>
+    <!-- <script src="js/additional.js"></script> -->
+</head>
+
+<body>
+    <h1>足し算</h1>
+    <h2 id="time"></h2>
+    <h3 id="sec">0</h3>
+
+    <main>
+        <div class="flex">
+            <h2 id="num1"></h2>
+            <h2>+</h2>
+            <h2 id="num2"></h2>
+            <h2>=</h2>
+            <h2 id="answer"></h2>
+        </div>
+
+    </main>
+
+    <br>
+    <p>Speed</p>
+
+    <div class="flex is_around">
+        <label for=""><input type="radio" name="speed" value="1000">1.0s</label>
+        <label for=""><input type="radio" name="speed" value="900">0.9s</label>
+        <label for=""><input type="radio" name="speed" value="850">0.85s</label>
+        <label for=""><input type="radio" name="speed" value="800">0.8s</label>
+        <label for=""><input type="radio" name="speed" value="750">0.75s</label>
+        <label for=""><input type="radio" name="speed" value="700">0.7s</label>
+        <label for=""><input type="radio" name="speed" value="500">0.5s</label>
+        <label for=""><input type="radio" name="speed" value="300">0.3s</label>
+    </div>
+
+    <br>
+    <div class="flex">
+        <div class="flex is_around button">
+            <button id="start">START</button>
+            <button id="stop">STOP</button>
+        </div>
+    </div>
+</body>
+
+<script src="js/additional.js"></script>
+
+</html>
