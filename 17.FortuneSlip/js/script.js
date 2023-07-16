@@ -94,14 +94,14 @@ function arrayset() {
 
         if (i == 0) {
             data[i][0] = "1等";
-            data[i][1] = "img/cat-03.jpg";
+            data[i][1] = "../img/cat-03.jpg";
         } else if (i < 3) {
             data[i][0] = "2等";
-            data[i][1] = "img/cat-02.jpg";
+            data[i][1] = "../img/cat-02.jpg";
         }
         else {
             data[i][0] = "3等";
-            data[i][1] = "img/cat-01.jpg";
+            data[i][1] = "../img/cat-01.jpg";
         }
         // console.log(data[i][1]);
     }
@@ -110,7 +110,7 @@ function arrayset() {
 
     data[random] = new Array(2);
     data[random][0] = "特賞";
-    data[random][1] = "img/cat-04.jpg";
+    data[random][1] = "../img/cat-04.jpg";
 }
 
 function shuffle(arrays) {
