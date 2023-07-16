@@ -16,18 +16,18 @@ function imgchange() {
     // window.addEventListener("load", () => {
     // var image = document.getElementById("img");
 
-    var img = new Array();
+    // var img = new Array();
 
-    img[0] = new Image();
-    img[0].src = "../img/cat-00.jpg";
-    img[1] = new Image();
-    img[1].src = "../img/cat-01.jpg";
-    img[2] = new Image();
-    img[2].src = "../img/cat-02.jpg";
-    img[3] = new Image();
-    img[3].src = "../img/cat-03.jpg";
-    img[4] = new Image();
-    img[4].src = "../img/cat-04.jpg";
+    // img[0] = new Image();
+    // img[0].src = "../img/cat-00.jpg";
+    // img[1] = new Image();
+    // img[1].src = "../img/cat-01.jpg";
+    // img[2] = new Image();
+    // img[2].src = "../img/cat-02.jpg";
+    // img[3] = new Image();
+    // img[3].src = "../img/cat-03.jpg";
+    // img[4] = new Image();
+    // img[4].src = "../img/cat-04.jpg";
 
     // console.log(data[0][0]);
     // console.log(data[0][1]);
