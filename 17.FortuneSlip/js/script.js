@@ -40,7 +40,6 @@ function imgchange() {
         arrayset();
         document.getElementById("button").innerHTML = "くじを引く";
         document.getElementById("result").innerText = "ボタンをクリックしてね。";
-
     }
 
     // document.getElementById("log").innerText = random;

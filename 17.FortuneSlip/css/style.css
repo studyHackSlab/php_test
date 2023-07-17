@@ -4,12 +4,41 @@ body {
     text-align: center;
 }
 
-h1{
+h1 {
     font-size: 40px;
+}
+
+
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    /* --startDeg: 0deg; */
+    /* inline-size: 50vmin; */
+    /* block-size: 50vmin; */
+
+    border: 3vmin solid hsl(291, 59%, 22%);
+    border-image-slice: 1;
+
+    border-image-source: conic-gradient(from var(--startDeg, 0deg),
+            hsl(240, 60%, 59%),
+            hsl(240, 0%, 0%),
+            hsl(240, 60%, 59%));
+
+    display: grid;
+    /* place-content: center; */
+    padding: 2ch;
+    /* padding: 1px; */
+    /* box-sizing: border-box; */
+    /* font-size: 10vmin; */
+
 }
 
 p {
     background-color: #350e43;
+
     color: #fff;
     font-size: 32px;
 }
@@ -18,11 +47,11 @@ img {
     width: 200px;
 }
 
-button{
+button {
     font-size: 40px;
 }
 
-h2{
+h2 {
     background-color: #350e43;
     background-color: #501566;
     background-color: #661982;
