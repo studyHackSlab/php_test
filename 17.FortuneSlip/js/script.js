@@ -1,7 +1,7 @@
 var count = 0;
 var random = Math.floor(Math.random() * 5) + 6;
 var data = new Array();
-
+var color = new Array('350e43','#E5004F','#920783','#1D2088','#0068B7','#E4007F','#F39800','#009E96','#009944','#8FC31F','#834E00','#920783');
 // data = new Array();
 // data[0] = new Array(2);
 // data[1] = new Array(2);
@@ -16,6 +16,12 @@ function imgchange() {
 
     document.getElementById("img").src = data[count][1];
     document.getElementById("result").innerText = data[count][0];
+    document.getElementById("result").style.backgroundColor = color[count];
+    // background-color: #350e43;
+    // background-color: ;
+    // background-color: #661982;
+
+
 
     console.log(count);
     // console.log(img[count].src);
